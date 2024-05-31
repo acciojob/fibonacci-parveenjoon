@@ -1,11 +1,22 @@
-function fibonacci(num, memo = {}) {
-    if (num in memo) {
-        return memo[num];
-    }
-    if (num === 0) return 0;
-    if (num === 1) return 1;
-    memo[num] = fibonacci(num - 1, memo) + fibonacci(num - 2, memo);
-    return memo[num];
+
+function fibonacci(num) {
+// your code here 
+	let fib = [];
+	fib[1] = 0;
+	fib[2] = 1;
+	
+	if(num > 2){
+
+		for(let i=2; i<num; i++)
+		{
+			fib[i+1] = fib[i] + fib[i-1];
+		}
+		
+	}
+
+	return fib[num];
+	
 }
+console.log(fibonacci(4));
 
 module.exports = fibonacci;
